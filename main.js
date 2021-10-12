@@ -16,17 +16,15 @@ const product = [{
     }
 ]
 
-
-
-
+// select product images element
 const productImg = document.querySelector('.product-img img')
 const thumbnailsImg = document.querySelectorAll('.thumbnail')
 
-const changeImage = (thumbnail, i) => thumbnail.addEventListener('click', e => {
+const changeProductImage = (thumbnail, i) => thumbnail.addEventListener('click', e => {
     const currentThumbnail = e.currentTarget
     thumbnailsImg.forEach(item => item.classList.remove('active'))
     currentThumbnail.classList.add('active')
-    // const currentImg = currentThumbnail.querySelector('img')
+
     product.forEach((item, j) => {
         if (j === i) {
             productImg.src = item.src
@@ -34,4 +32,4 @@ const changeImage = (thumbnail, i) => thumbnail.addEventListener('click', e => {
     })
 })
 
-thumbnailsImg.forEach(changeImage)
+thumbnailsImg.forEach(changeProductImage)
