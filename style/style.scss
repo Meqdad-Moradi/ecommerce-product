@@ -63,6 +63,11 @@ a {
         align-items: center;
     }
 
+    .mobile-menu {
+        grid-area: menu;
+        display: none;
+    }
+
     .logo-wrapper {
         grid-area: logo;
 
@@ -172,6 +177,10 @@ a {
         width: 80%;
         border-radius: 15px;
         overflow: hidden;
+
+        img {
+            cursor: pointer;
+        }
     }
 
     .thumbnails {
@@ -218,6 +227,7 @@ a {
 
         h2 {
             text-transform: uppercase;
+            letter-spacing: 3px;
             color: $Orange;
             font-size: 1rem;
             margin-bottom: 1em;
@@ -310,7 +320,7 @@ a {
                 margin-right: .5em;
             }
 
-            &:hover{
+            &:hover {
                 opacity: .7;
                 box-shadow: 0 20px 15px $Pale-orange;
             }
@@ -319,7 +329,98 @@ a {
 }
 
 
+// lightbox
+.lightbox {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    @include flex(column, center);
+    display: none;
 
+    .container {
+        width: 30%;
+    }
+
+    .close {
+        text-align: right;
+        margin-bottom: 1em;
+        cursor: pointer;
+
+        .close-btn {
+            fill: $Orange;
+        }
+    }
+
+    .product-img {
+        border-radius: 15px;
+        position: relative;
+
+        img {
+            border-radius: 15px;
+        }
+    }
+
+    .prev,
+    .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $White;
+        border-radius: 50px;
+        height: 40px;
+        width: 40px;
+        @include flex(column, center);
+        cursor: pointer;
+    }
+
+    .prev {
+        left: -20px;
+    }
+
+    .next {
+        right: -20px;
+    }
+
+    .thumbnails {
+        @include flex(row, center);
+        margin: 1em auto;
+        width: 80%;
+    }
+
+    .thumbnail {
+        border-radius: 10px;
+        overflow: hidden;
+        border: 2px solid transparent;
+        cursor: pointer;
+
+        &.active {
+            background-color: $White;
+            border-color: $Orange;
+
+            img {
+                opacity: .4;
+                border-radius: 10px;
+            }
+        }
+
+        &:hover {
+            border-color: $Orange;
+
+            img {
+                opacity: .5;
+                border-radius: 10px;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-right: 1em;
+        }
+    }
+}
 
 
 

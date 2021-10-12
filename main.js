@@ -16,20 +16,63 @@ const product = [{
     }
 ]
 
-// select product images element
-const productImg = document.querySelector('.product-img img')
-const thumbnailsImg = document.querySelectorAll('.thumbnail')
 
-const changeProductImage = (thumbnail, i) => thumbnail.addEventListener('click', e => {
-    const currentThumbnail = e.currentTarget
-    thumbnailsImg.forEach(item => item.classList.remove('active'))
-    currentThumbnail.classList.add('active')
+// select elements
+const productImg = document.querySelector('.product-img img')
+const thumbnailsImg = document.querySelectorAll('.showcase-body .thumbnail')
+const lightbox = document.querySelector('.lightbox')
+const lightboxProductImg = document.querySelector('.lightbox .product-img img')
+const lightboxThumbnailsImg = document.querySelectorAll('.lightbox .thumbnail')
+const close = document.querySelector('.close')
+
+
+// preview product image function
+const previewProductImage = (targetThumbnail, allThumbnails, productImage, i) => {
+    allThumbnails.forEach(item => item.classList.remove('active'))
+    targetThumbnail.classList.add('active')
 
     product.forEach((item, j) => {
         if (j === i) {
-            productImg.src = item.src
+            productImage.src = item.src
+        }
+    })
+}
+
+
+// preview product images
+thumbnailsImg.forEach((thumbnail, index) => thumbnail.addEventListener('click', e => {
+    const currentThumbnail = e.currentTarget
+    const currentIndex = index
+
+    previewProductImage(currentThumbnail, thumbnailsImg, productImg, currentIndex)
+}))
+
+
+// lightbox section
+productImg.addEventListener('click', () => {
+    lightbox.style.display = 'flex'
+})
+
+
+// remove lightbox 
+lightbox.addEventListener('click', e => {
+    lightbox.addEventListener('click', e => {
+        if (e.target === e.currentTarget) {
+            e.currentTarget.style.display = 'none'
         }
     })
 })
 
-thumbnailsImg.forEach(changeProductImage)
+// preview product images from lightbox
+lightboxThumbnailsImg.forEach((item, index) => item.addEventListener('click', e => {
+    currentItem = e.currentTarget
+    currentIndex = index
+
+    previewProductImage(currentItem, lightboxThumbnailsImg, lightboxProductImg, currentIndex)
+}))
+
+
+// close the lightbox
+close.addEventListener('click', e => {
+    lightbox.style.display = 'none'
+})
