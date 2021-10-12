@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
+@import 'colors';
+@import 'vars';
+
+
+
 *,
 *::after,
 *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all .3s ease-in-out;
 }
 
 
@@ -14,6 +21,7 @@
 
 body {
     line-height: 1.8;
+    font-family: 'Kumbh Sans', sans-serif;
     font-weight: normal;
     font-size: 100%;
 }
@@ -31,6 +39,130 @@ ul {
 a {
     text-decoration: none;
 }
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#header {
+
+
+    .header-body {
+        height: 100px;
+        border-bottom: 1px solid $Light-grayish-blue;
+        display: grid;
+        grid-template-areas:
+            'logo nav . . . . . . . . cart avatar';
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-wrapper {
+        grid-area: logo;
+
+        .logo {
+            fill: $Black;
+
+        }
+    }
+
+    .nav {
+        grid-area: nav;
+
+        .nav-list {
+            @include flex();
+
+            li {
+                line-height: 100px;
+                position: relative;
+
+                &:not(:last-child) {
+                    margin-right: 2em;
+                }
+            }
+
+
+
+            a {
+                color: $Dark-grayish-blue;
+                display: inline-block;
+                line-height: 100px;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    width: 0;
+                    height: 3px;
+                    background-color: $Orange;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+
+                &:hover {
+                    color: $Very-vark-blue;
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .cart {
+        grid-area: cart;
+        cursor: pointer;
+
+        .cart-item {
+            fill: $Dark-grayish-blue;
+        }
+
+        &:hover .cart-item {
+            fill: $Very-vark-blue;
+        }
+    }
+
+    .avatar {
+        grid-area: avatar;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        height: 50px;
+        width: 50px;
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+            border-color: $Orange;
+        }
+
+        img {
+            width: 3em;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
