@@ -8,6 +8,10 @@
           box-sizing: border-box;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
 *::first-letter {
@@ -16,7 +20,6 @@
 
 body {
   line-height: 1.8;
-  font-family: 'Kumbh Sans', sans-serif;
   font-weight: normal;
   font-size: 100%;
 }
@@ -178,6 +181,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  grid-gap: 1em;
 }
 
 #showcase .product-imgs {
@@ -234,6 +238,174 @@ a {
 
 #showcase .thumbnail:last-child {
   margin-right: 0;
+}
+
+#showcase .product-content {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+#showcase .showcase-content-body {
+  width: 80%;
+}
+
+#showcase .showcase-content-body h2 {
+  text-transform: uppercase;
+  color: #ff7d1a;
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+
+#showcase .showcase-content-body h1 {
+  color: black;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1em;
+}
+
+#showcase .showcase-content-body p {
+  color: #68707d;
+}
+
+#showcase .showcase-content-body .price-section {
+  margin-top: 2em;
+}
+
+#showcase .showcase-content-body .price-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#showcase .showcase-content-body .price {
+  font-size: 2rem;
+  color: black;
+  font-weight: 700;
+}
+
+#showcase .showcase-content-body .discount {
+  margin-left: 1em;
+  background-color: #ffede0;
+  color: #ff7d1a;
+  font-weight: 700;
+  padding: 0 .5em;
+  border-radius: 5px;
+}
+
+#showcase .showcase-content-body .sale {
+  display: block;
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+  font-weight: 700;
+  color: #b6bcc8;
+}
+
+#showcase .showcase-content-body .amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2em;
+}
+
+#showcase .showcase-content-body .amount-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f7f8fd;
+  border-radius: 5px;
+}
+
+#showcase .showcase-content-body .amount-btn {
+  padding: .6em 1em;
+}
+
+#showcase .showcase-content-body .minus,
+#showcase .showcase-content-body .plus {
+  fill: #ff7d1a;
+  line-height: 0;
+  cursor: pointer;
+}
+
+#showcase .showcase-content-body .counter {
+  font-weight: 700;
+}
+
+#showcase .showcase-content-body .checkout {
+  margin-left: 1em;
+}
+
+#showcase .showcase-content-body .checkout-btn {
+  padding: .8em 3em;
+  background-color: #ff7d1a;
+  line-height: 1;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+#showcase .showcase-content-body .checkout-btn svg {
+  fill: white;
+  margin-right: .5em;
+}
+
+#showcase .showcase-content-body .checkout-btn:hover {
+  opacity: .7;
+  -webkit-box-shadow: 0 20px 15px #ffede0;
+          box-shadow: 0 20px 15px #ffede0;
 }
 
 .attribution {

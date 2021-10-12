@@ -11,6 +11,10 @@
     padding: 0;
     box-sizing: border-box;
     transition: all .3s ease-in-out;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 
@@ -21,11 +25,9 @@
 
 body {
     line-height: 1.8;
-    font-family: 'Kumbh Sans', sans-serif;
     font-weight: normal;
     font-size: 100%;
 }
-
 
 img {
     display: block;
@@ -158,6 +160,7 @@ a {
 
     .showcase-body {
         @include grid();
+        grid-gap: 1em;
     }
 
     .product-imgs {
@@ -201,6 +204,116 @@ a {
 
         &:last-child {
             margin-right: 0;
+        }
+    }
+
+    // product details
+    .product-content {
+        display: grid;
+        place-items: center;
+    }
+
+    .showcase-content-body {
+        width: 80%;
+
+        h2 {
+            text-transform: uppercase;
+            color: $Orange;
+            font-size: 1rem;
+            margin-bottom: 1em;
+        }
+
+        h1 {
+            color: $Black;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1em;
+        }
+
+        p {
+            color: $Dark-grayish-blue;
+        }
+
+        .price-section {
+            margin-top: 2em;
+        }
+
+        .price-content {
+            @include flex(row, stretch);
+        }
+
+        .price {
+            font-size: 2rem;
+            color: $Black;
+            font-weight: 700;
+        }
+
+        .discount {
+            margin-left: 1em;
+            background-color: $Pale-orange;
+            color: $Orange;
+            font-weight: 700;
+            padding: 0 .5em;
+            border-radius: 5px;
+        }
+
+        .sale {
+            display: block;
+            text-decoration-line: line-through;
+            font-weight: 700;
+            color: $Grayish-blue;
+        }
+
+        .amount {
+            @include flex(row, stretch);
+            margin-top: 2em;
+        }
+
+        .amount-btns {
+            @include flex();
+            background-color: $Light-grayish-blue;
+            border-radius: 5px;
+        }
+
+        .amount-btn {
+            padding: .6em 1em;
+        }
+
+        .minus,
+        .plus {
+            fill: $Orange;
+            line-height: 0;
+            cursor: pointer;
+        }
+
+        .counter {
+            font-weight: 700;
+        }
+
+        .checkout {
+            margin-left: 1em;
+        }
+
+        .checkout-btn {
+            padding: .8em 3em;
+            background-color: $Orange;
+            line-height: 1;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: $White;
+            border-radius: 5px;
+            @include flex();
+            cursor: pointer;
+
+            svg {
+                fill: $White;
+                margin-right: .5em;
+            }
+
+            &:hover{
+                opacity: .7;
+                box-shadow: 0 20px 15px $Pale-orange;
+            }
         }
     }
 }
