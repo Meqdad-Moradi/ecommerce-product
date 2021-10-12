@@ -28,6 +28,7 @@ body {
 
 
 img {
+    display: block;
     width: 100%;
     max-width: 100%;
 }
@@ -46,8 +47,9 @@ a {
     margin: 0 auto;
 }
 
-#header {
 
+// header
+#header {
 
     .header-body {
         height: 100px;
@@ -144,6 +146,61 @@ a {
             object-fit: cover;
             position: absolute;
             inset: 0;
+        }
+    }
+}
+
+
+
+// showcase
+#showcase {
+    padding-block: 5em;
+
+    .showcase-body {
+        @include grid();
+    }
+
+    .product-imgs {
+        display: grid;
+        place-items: center;
+    }
+
+    .product-img {
+        width: 80%;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .thumbnails {
+        @include flex();
+        width: 80%;
+        margin-top: 2em;
+    }
+
+    .thumbnail {
+        margin-right: calc(2em - 2px);
+        border-radius: 10px;
+        overflow: hidden;
+        border: 2px solid transparent;
+        cursor: pointer;
+
+        &.active {
+            img {
+                opacity: .3;
+            }
+
+            border-color: $Orange;
+        }
+
+        &:hover {
+            img {
+                opacity: .5;
+            }
+        }
+
+
+        &:last-child {
+            margin-right: 0;
         }
     }
 }

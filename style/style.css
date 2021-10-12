@@ -22,6 +22,7 @@ body {
 }
 
 img {
+  display: block;
   width: 100%;
   max-width: 100%;
 }
@@ -159,6 +160,80 @@ a {
      object-fit: cover;
   position: absolute;
   inset: 0;
+}
+
+#showcase {
+  padding-block: 5em;
+}
+
+#showcase .showcase-body {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 2em;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#showcase .product-imgs {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+#showcase .product-img {
+  width: 80%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+#showcase .thumbnails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  margin-top: 2em;
+}
+
+#showcase .thumbnail {
+  margin-right: calc(2em - 2px);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+#showcase .thumbnail.active {
+  border-color: #ff7d1a;
+}
+
+#showcase .thumbnail.active img {
+  opacity: .3;
+}
+
+#showcase .thumbnail:hover img {
+  opacity: .5;
+}
+
+#showcase .thumbnail:last-child {
+  margin-right: 0;
 }
 
 .attribution {
