@@ -106,9 +106,9 @@ close.addEventListener('click', e => {
 })
 
 
-/*=========================
-    checkout the product
-=========================*/
+/*========================================
+    add to cart & checkout the product
+========================================*/
 
 // create cart item
 const productItem = [{
@@ -126,6 +126,7 @@ const decrementBtn = document.querySelector('#decrement')
 const quantityBtn = document.querySelector('#quantity')
 const incrementBtn = document.querySelector('#increment')
 const cartInfo = document.querySelector('.cart-info')
+const cartState = document.querySelector('.cart-state')
 const avatar = document.querySelector('.avatar')
 
 let quantity = 1
@@ -144,7 +145,7 @@ const toggleCartContent = () => {
 cart.addEventListener('click', toggleCartContent)
 avatar.addEventListener('click', toggleCartContent)
 
-// 
+
 
 // decrement the item's amount
 decrementBtn.addEventListener('click', e => {
@@ -190,11 +191,21 @@ addToCartBtn.addEventListener('click', e => {
               
               <button class="checkout-btn">checkout</button>`
 
+    //   update cart state
+    cartState.classList.add('fill')
+    cartState.innerText = quantity
+
+    //   delete item from cart
     const deleteBtn = document.querySelector('.remove-product')
     deleteBtn.addEventListener('click', () => {
+        // update cart body style
         cartBody.style.display = 'grid'
         cartBody.style.height = '200px'
         cartBody.innerHTML = '<p class="cart-info">your cart is empty!</p>'
+
+        //   update cart state
+        cartState.classList.remove('fill')
+        cartState.innerText = 0
     })
 })
 
@@ -202,5 +213,33 @@ addToCartBtn.addEventListener('click', e => {
 cartContent.addEventListener('click', e => {
     if (e.target !== e.currentTarget) {
         cartContent.classList.remove('active')
+    }
+})
+
+
+
+/*====================
+    mobile menu
+====================*/
+
+const toggler = document.querySelector('#toggler')
+const nav = document.querySelector('#header-nav')
+const togglerImg = toggler.querySelector('#toggler img')
+
+toggler.addEventListener('click', () => {
+    // toggle the nav item
+    if (!nav.classList.contains('active')) {
+        nav.classList.add('active')
+        togglerImg.src = './images/icon-close.svg'
+    } else {
+        nav.classList.remove('active')
+        togglerImg.src = './images/icon-menu.svg'
+    }
+})
+
+nav.addEventListener('click', e => {
+    if (e.target === e.currentTarget) {
+        nav.classList.remove('active')
+        togglerImg.src = './images/icon-menu.svg'
     }
 })
