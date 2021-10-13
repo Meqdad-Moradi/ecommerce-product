@@ -375,6 +375,11 @@ a {
         width: 40px;
         @include flex(column, center);
         cursor: pointer;
+        font-size: 1.25rem;
+
+        &:hover {
+            color: $Orange;
+        }
     }
 
     .prev {

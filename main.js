@@ -24,6 +24,10 @@ const lightbox = document.querySelector('.lightbox')
 const lightboxProductImg = document.querySelector('.lightbox .product-img img')
 const lightboxThumbnailsImg = document.querySelectorAll('.lightbox .thumbnail')
 const close = document.querySelector('.close')
+const nextBtn = document.querySelector('.next')
+const prevBtn = document.querySelector('.prev')
+
+let counter
 
 
 // preview product image function
@@ -75,4 +79,10 @@ lightboxThumbnailsImg.forEach((item, index) => item.addEventListener('click', e 
 // close the lightbox
 close.addEventListener('click', e => {
     lightbox.style.display = 'none'
+})
+
+
+// next slide
+nextBtn.addEventListener('click', e=>{
+    console.log(109)
 })

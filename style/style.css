@@ -493,6 +493,12 @@ a {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.lightbox .prev:hover,
+.lightbox .next:hover {
+  color: #ff7d1a;
 }
 
 .lightbox .prev {
