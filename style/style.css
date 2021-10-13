@@ -538,6 +538,8 @@ a {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  -webkit-box-shadow: 0 20px 15px #ffede0;
+          box-shadow: 0 20px 15px #ffede0;
 }
 
 #showcase .showcase-content-body .add-to-cart-btn svg {
@@ -547,8 +549,6 @@ a {
 
 #showcase .showcase-content-body .add-to-cart-btn:hover {
   opacity: .7;
-  -webkit-box-shadow: 0 20px 15px #ffede0;
-          box-shadow: 0 20px 15px #ffede0;
 }
 
 .lightbox {
@@ -558,7 +558,7 @@ a {
   height: 100vh;
   left: 0;
   top: 0;
-  z-index: 1000;
+  z-index: 800;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -749,6 +749,64 @@ a {
   }
   #header .nav-list a::after {
     display: none;
+  }
+  #header .cart-content {
+    position: fixed;
+    top: 100px;
+    left: 50% !important;
+    z-index: 10;
+  }
+  .showcase-content-body h1 {
+    font-size: 2rem !important;
+  }
+  .price-section {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: 'price-cont sale' 'amount amount';
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .price-content {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: price-cont;
+  }
+  .sale {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: sale;
+    margin-left: auto;
+  }
+  .amount {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    width: 100%;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: amount;
+  }
+  .amount-btns {
+    width: 100%;
+  }
+  .add-to-cart {
+    margin: 2em 0 0 0 !important;
+    width: 100%;
+  }
+  .add-to-cart .add-to-cart-btn {
+    width: 100%;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+  .lightbox .container {
+    width: 80%;
   }
 }
 
