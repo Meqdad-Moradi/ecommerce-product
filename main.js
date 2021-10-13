@@ -85,11 +85,9 @@ productImg.addEventListener('click', () => {
 
 // remove lightbox 
 lightbox.addEventListener('click', e => {
-    lightbox.addEventListener('click', e => {
-        if (e.target === e.currentTarget) {
-            e.currentTarget.style.display = 'none'
-        }
-    })
+    if (e.target === e.currentTarget) {
+        e.currentTarget.style.display = 'none'
+    }
 })
 
 // preview product images from lightbox
