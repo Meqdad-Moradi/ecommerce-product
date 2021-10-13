@@ -112,6 +112,8 @@ close.addEventListener('click', e => {
 // checkout the product
 
 const cart = document.querySelector('.cart')
+const addToCartBtn = document.querySelector('#add-to-cart')
+
 
 
 // create cart container

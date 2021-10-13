@@ -228,6 +228,7 @@ a {
 
 #header .cart-body .remove-product {
   margin-left: auto;
+  cursor: pointer;
 }
 
 #header .cart-body .checkout-btn {
