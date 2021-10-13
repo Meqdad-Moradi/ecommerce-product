@@ -124,6 +124,7 @@ a {
     .cart {
         grid-area: cart;
         cursor: pointer;
+        position: relative;
 
         .cart-item {
             fill: $Dark-grayish-blue;
@@ -131,6 +132,92 @@ a {
 
         &:hover .cart-item {
             fill: $Very-vark-blue;
+        }
+    }
+
+    .cart-content {
+        position: absolute;
+        left: 50%;
+        top: 150%;
+        transform: translateX(-50%);
+        width: 350px;
+        height: auto;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+        background-color: $White;
+        border-radius: 10px;
+        z-index: 1000;
+        cursor: default;
+        display: none;
+
+        &.active {
+            display: block;
+
+            .cart-info {
+                display: none;
+            }
+        }
+    }
+
+    .cart-header {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 1em;
+
+        .cart-title {
+            font-weight: 700;
+        }
+    }
+
+    .cart-body {
+        padding: 1em;
+        border-radius: 0 0 10px 10px;
+
+        .cart-body-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-item-img {
+            width: 3.5em;
+            border-radius: 5px;
+            overflow: hidden;
+
+            img {
+                border-radius: 5px;
+            }
+        }
+
+        .cart-item-details {
+            margin-left: 1em;
+
+            .product-name,
+            .price,
+            .calc {
+                color: $Dark-grayish-blue;
+            }
+
+            .total-price {
+                color: $Black;
+                font-weight: 700;
+            }
+        }
+
+        .remove-product {
+            margin-left: auto;
+        }
+
+        .checkout-btn {
+            padding: 1em 2em;
+            width: 100%;
+            background-color: $Orange;
+            color: $White;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-top: 2em;
+            border-radius: 10px;
+            cursor: pointer;
         }
     }
 
@@ -300,11 +387,11 @@ a {
             font-weight: 700;
         }
 
-        .checkout {
+        .add-to-cart {
             margin-left: 1em;
         }
 
-        .checkout-btn {
+        .add-to-cart-btn {
             padding: .8em 3em;
             background-color: $Orange;
             line-height: 1;

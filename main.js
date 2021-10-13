@@ -30,7 +30,7 @@ const prevBtn = document.querySelector('.prev')
 let counter = 0
 
 
-// preview product image function
+// preview product image
 const previewProductImage = (targetThumbnail, allThumbnails, productImage, i) => {
     allThumbnails.forEach(item => item.classList.remove('active'))
     targetThumbnail.classList.add('active')
@@ -105,4 +105,17 @@ lightboxThumbnailsImg.forEach((item, index) => item.addEventListener('click', e 
 // close the lightbox
 close.addEventListener('click', e => {
     lightbox.style.display = 'none'
+})
+
+
+//////////////////////////////////
+// checkout the product
+
+const cart = document.querySelector('.cart')
+
+
+// create cart container
+cart.addEventListener('click', e => {
+    const cartContent = document.querySelector('.cart-content')
+    cartContent.classList.toggle('active')
 })

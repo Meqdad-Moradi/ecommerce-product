@@ -22,6 +22,8 @@
           <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fill-rule="evenodd" /></svg>
         </div>
+
+        <!-- logo -->
         <div class="logo-wrapper">
           <a href="./index.html">
             <svg class="logo" width="138" height="20" xmlns="http://www.w3.org/2000/svg">
@@ -31,6 +33,8 @@
             </svg>
           </a>
         </div>
+
+        <!-- nav -->
         <nav class="nav">
           <ul class="nav-list">
             <li><a href="#">Collections</a></li>
@@ -45,7 +49,40 @@
             <path
               d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
               fill-rule="nonzero" /></svg>
+
+          <!-- cart content -->
+          <div class="cart-content active">
+            <header class="cart-header">
+              <p class="cart-title">cart</p>
+            </header>
+
+            <div class="cart-body">
+              <div class="cart-body-content">
+                <div class="cart-item-img">
+                  <img src="./images/image-product-1.jpg" alt="">
+                </div>
+
+                <div class="cart-item-details">
+                  <p class="product-name">Fall Limited Edition Sneakers</p>
+                  <div class="cart-prices">
+                    <span class="price">$125.00</span>
+                    <span class="calc">x <span class="quantity">3</span></span>
+                    <span class="total-price">$375.00</span>
+                  </div>
+                </div>
+
+                <div class="remove-product">
+                  <img src="./images/icon-delete.svg" alt="delete">
+                </div>
+              </div>
+
+              <span class="cart-info">your cart is empty!</span>
+              <button class="checkout-btn">checkout</button>
+            </div>
+          </div>
         </div>
+
+        <!-- avatar -->
         <div class="avatar">
           <img src="./images/image-avatar.png" alt="avatar">
         </div>
@@ -59,11 +96,13 @@
   <section id="showcase">
     <div class="container">
       <div class="showcase-body">
+
         <!-- imgs -->
         <div class="product-imgs">
           <div class="product-img">
-            <img src="./images/image-product-1.jpg" alt="product">
+            <img src="./images/image-product-1.jpg" alt="Fall Limited Edition Sneakers">
           </div>
+
           <!-- thumbnails -->
           <div class="thumbnails">
             <div class="thumbnail active">
@@ -80,6 +119,7 @@
             </div>
           </div>
         </div>
+
         <!-- details -->
         <div class="product-content">
           <div class="showcase-content-body">
@@ -124,9 +164,10 @@
                     </svg>
                   </div>
                 </div>
-                <!-- checkout btn -->
-                <div class="checkout">
-                  <button class="checkout-btn">
+
+                <!-- add to cart btn -->
+                <div class="add-to-cart">
+                  <button class="add-to-cart-btn">
                     <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
@@ -155,13 +196,10 @@
       </div>
       <div class="product-img">
         <img src="./images/image-product-1.jpg" alt="product">
-        <div class="next">
-          &#10095;
-        </div>
-        <div class="prev">
-          &#10094;
-        </div>
+        <div class="next">&#10095;</div>
+        <div class="prev">&#10094;</div>
       </div>
+
       <!-- thumbnails -->
       <div class="thumbnails">
         <div class="thumbnail active">
