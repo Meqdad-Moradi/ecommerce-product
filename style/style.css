@@ -224,6 +224,7 @@ a {
 #header .cart-body .cart-item-details .total-price {
   color: black;
   font-weight: 700;
+  margin-left: .5em;
 }
 
 #header .cart-body .remove-product {

@@ -111,14 +111,23 @@ close.addEventListener('click', e => {
 //////////////////////////////////
 // checkout the product
 
+// create cart item
+const productItem = [{
+    id: 1,
+    pName: 'Fall Limited Edition Sneakers',
+    price: 125.00,
+    src: './images/image-product-1.jpg'
+}]
+
 const cart = document.querySelector('.cart')
+const cartBody = document.querySelector('.cart-body')
 const addToCartBtn = document.querySelector('#add-to-cart')
 const decrementBtn = document.querySelector('#decrement')
 const quantityBtn = document.querySelector('#quantity')
 const incrementBtn = document.querySelector('#increment')
 const cartInfo = document.querySelector('.cart-info')
 
-let quantity = 0
+let quantity = 1
 
 
 // create cart container
@@ -138,7 +147,10 @@ cart.addEventListener('click', e => {
 
 decrementBtn.addEventListener('click', e => {
     quantity--
-    if (quantity <= 0) return
+    if (quantity <= 0) {
+        quantity = 1
+        return false
+    }
 
     quantityBtn.textContent = quantity
 })
@@ -151,21 +163,21 @@ incrementBtn.addEventListener("click", e => {
 
 
 addToCartBtn.addEventListener('click', e => {
-    const cartBody = document.querySelector('.cart-body')
     cartInfo.style.display = 'none'
-
+    cartBody.style.display = 'block'
+    cartBody.style.height = 'auto'
     cartBody.innerHTML = `
             <div class="cart-body-content">
                 <div class="cart-item-img">
-                  <img src="./images/image-product-1.jpg" alt="">
+                  <img src="${productItem[0].src}" alt="${productItem[0].pName}">
                 </div>
 
                 <div class="cart-item-details">
-                  <p class="product-name">Fall Limited Edition Sneakers</p>
+                  <p class="product-name">${productItem[0].pName}</p>
                   <div class="cart-prices">
-                    <span class="price">$125.00</span>
-                    <span class="calc">x <span class="quantity">3</span></span>
-                    <span class="total-price">$375.00</span>
+                    <span class="price">$${productItem[0].price}</span>
+                    <span class="calc">x <span class="quantity">${quantity}</span></span>
+                    <span class="total-price">$${productItem[0].price * quantity}.00</span>
                   </div>
                 </div>
 
@@ -178,6 +190,8 @@ addToCartBtn.addEventListener('click', e => {
 
     const deleteBtn = document.querySelector('.remove-product')
     deleteBtn.addEventListener('click', () => {
+        cartBody.style.display = 'grid'
+    cartBody.style.height = '200px'
         cartBody.innerHTML = '<p class="cart-info">your cart is empty!</p>'
     })
 })
