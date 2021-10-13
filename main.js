@@ -27,7 +27,7 @@ const close = document.querySelector('.close')
 const nextBtn = document.querySelector('.next')
 const prevBtn = document.querySelector('.prev')
 
-let counter
+let counter = 0
 
 
 // preview product image function
@@ -55,6 +55,31 @@ thumbnailsImg.forEach((thumbnail, index) => thumbnail.addEventListener('click', 
 // lightbox section
 productImg.addEventListener('click', () => {
     lightbox.style.display = 'flex'
+
+    // next slide
+    nextBtn.addEventListener('click', e => {
+        counter++
+        if (counter > product.length - 1) {
+            counter = 0
+        }
+
+        lightboxThumbnailsImg.forEach(item => item.classList.remove('active'))
+        lightboxThumbnailsImg[counter].classList.add('active')
+        lightboxProductImg.src = product[counter].src
+    })
+
+
+    // prev slide
+    prevBtn.addEventListener('click', e => {
+        counter--
+        if (counter < 0) {
+            counter = product.length - 1
+        }
+
+        lightboxThumbnailsImg.forEach(item => item.classList.remove('active'))
+        lightboxThumbnailsImg[counter].classList.add('active')
+        lightboxProductImg.src = product[counter].src
+    })
 })
 
 
@@ -71,6 +96,7 @@ lightbox.addEventListener('click', e => {
 lightboxThumbnailsImg.forEach((item, index) => item.addEventListener('click', e => {
     currentItem = e.currentTarget
     currentIndex = index
+    counter = index
 
     previewProductImage(currentItem, lightboxThumbnailsImg, lightboxProductImg, currentIndex)
 }))
@@ -79,10 +105,4 @@ lightboxThumbnailsImg.forEach((item, index) => item.addEventListener('click', e 
 // close the lightbox
 close.addEventListener('click', e => {
     lightbox.style.display = 'none'
-})
-
-
-// next slide
-nextBtn.addEventListener('click', e=>{
-    console.log(109)
 })
