@@ -113,11 +113,71 @@ close.addEventListener('click', e => {
 
 const cart = document.querySelector('.cart')
 const addToCartBtn = document.querySelector('#add-to-cart')
+const decrementBtn = document.querySelector('#decrement')
+const quantityBtn = document.querySelector('#quantity')
+const incrementBtn = document.querySelector('#increment')
+const cartInfo = document.querySelector('.cart-info')
 
+let quantity = 0
 
 
 // create cart container
 cart.addEventListener('click', e => {
     const cartContent = document.querySelector('.cart-content')
     cartContent.classList.toggle('active')
+
+    cartContent.addEventListener('click', e => {
+        if (e.target === e.currentTarget) {
+            return
+        } else {
+            e.currentTarget.classList.remove('active')
+        }
+    })
+})
+
+
+decrementBtn.addEventListener('click', e => {
+    quantity--
+    if (quantity <= 0) return
+
+    quantityBtn.textContent = quantity
+})
+
+
+incrementBtn.addEventListener("click", e => {
+    quantity++
+    quantityBtn.textContent = quantity
+})
+
+
+addToCartBtn.addEventListener('click', e => {
+    const cartBody = document.querySelector('.cart-body')
+    cartInfo.style.display = 'none'
+
+    cartBody.innerHTML = `
+            <div class="cart-body-content">
+                <div class="cart-item-img">
+                  <img src="./images/image-product-1.jpg" alt="">
+                </div>
+
+                <div class="cart-item-details">
+                  <p class="product-name">Fall Limited Edition Sneakers</p>
+                  <div class="cart-prices">
+                    <span class="price">$125.00</span>
+                    <span class="calc">x <span class="quantity">3</span></span>
+                    <span class="total-price">$375.00</span>
+                  </div>
+                </div>
+
+                <div class="remove-product" title="Delete item">
+                  <img src="./images/icon-delete.svg" alt="delete">
+                </div>
+              </div>
+              
+              <button class="checkout-btn">checkout</button>`
+
+    const deleteBtn = document.querySelector('.remove-product')
+    deleteBtn.addEventListener('click', () => {
+        cartBody.innerHTML = '<p class="cart-info">your cart is empty!</p>'
+    })
 })

@@ -167,10 +167,6 @@ a {
   display: block;
 }
 
-#header .cart-content.active .cart-info {
-  display: none;
-}
-
 #header .cart-header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1em;
@@ -183,6 +179,10 @@ a {
 #header .cart-body {
   padding: 1em;
   border-radius: 0 0 10px 10px;
+  height: 200px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
 #header .cart-body .cart-body-content {
@@ -239,7 +239,7 @@ a {
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 1px;
-  margin-top: 2em;
+  margin-top: 1em;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -462,7 +462,7 @@ a {
 }
 
 #showcase .showcase-content-body .amount-btn {
-  padding: .6em 1em;
+  padding: .7em 1em;
 }
 
 #showcase .showcase-content-body .minus,

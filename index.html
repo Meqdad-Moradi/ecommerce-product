@@ -55,29 +55,8 @@
             <header class="cart-header">
               <p class="cart-title">cart</p>
             </header>
-
             <div class="cart-body">
-              <div class="cart-body-content">
-                <div class="cart-item-img">
-                  <img src="./images/image-product-1.jpg" alt="">
-                </div>
-
-                <div class="cart-item-details">
-                  <p class="product-name">Fall Limited Edition Sneakers</p>
-                  <div class="cart-prices">
-                    <span class="price">$125.00</span>
-                    <span class="calc">x <span class="quantity">3</span></span>
-                    <span class="total-price">$375.00</span>
-                  </div>
-                </div>
-
-                <div class="remove-product">
-                  <img src="./images/icon-delete.svg" alt="delete">
-                </div>
-              </div>
-
-              <span class="cart-info">your cart is empty!</span>
-              <button class="checkout-btn">checkout</button>
+              <p class="cart-info">your cart is empty!</p>
             </div>
           </div>
         </div>
@@ -140,7 +119,7 @@
               <!-- amount -->
               <div class="amount">
                 <div class="amount-btns">
-                  <div class="plus amount-btn">
+                  <div class="minus amount-btn" id="decrement">
                     <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg"
                       xmlns:xlink="http://www.w3.org/1999/xlink">
                       <defs>
@@ -151,8 +130,8 @@
                       <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
                     </svg>
                   </div>
-                  <div class="counter amount-btn">0</div>
-                  <div class="minus amount-btn">
+                  <div class="counter amount-btn" id="quantity">0</div>
+                  <div class="plus amount-btn" id="increment">
                     <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"
                       xmlns:xlink="http://www.w3.org/1999/xlink">
                       <defs>

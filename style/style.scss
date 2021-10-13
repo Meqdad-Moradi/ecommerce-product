@@ -151,10 +151,6 @@ a {
 
         &.active {
             display: block;
-
-            .cart-info {
-                display: none;
-            }
         }
     }
 
@@ -170,6 +166,9 @@ a {
     .cart-body {
         padding: 1em;
         border-radius: 0 0 10px 10px;
+        height: 200px;
+        display: grid;
+        place-items: center;
 
         .cart-body-content {
             display: flex;
@@ -216,7 +215,7 @@ a {
             font-weight: 700;
             font-size: 1rem;
             letter-spacing: 1px;
-            margin-top: 2em;
+            margin-top: 1em;
             border-radius: 10px;
             cursor: pointer;
         }
@@ -374,7 +373,7 @@ a {
         }
 
         .amount-btn {
-            padding: .6em 1em;
+            padding: .7em 1em;
         }
 
         .minus,
