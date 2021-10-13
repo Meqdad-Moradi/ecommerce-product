@@ -187,6 +187,10 @@ a {
             }
         }
 
+        .cart-info{
+            color: $Dark-grayish-blue;
+        }
+
         .cart-item-details {
             margin-left: 1em;
 
@@ -206,6 +210,16 @@ a {
         .remove-product {
             margin-left: auto;
             cursor: pointer;
+
+            svg {
+                fill: $Grayish-blue;
+            }
+
+            &:hover {
+                svg {
+                    fill: $Black;
+                }
+            }
         }
 
         .checkout-btn {

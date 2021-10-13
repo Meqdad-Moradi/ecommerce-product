@@ -211,6 +211,10 @@ a {
   border-radius: 5px;
 }
 
+#header .cart-body .cart-info {
+  color: #68707d;
+}
+
 #header .cart-body .cart-item-details {
   margin-left: 1em;
 }
@@ -230,6 +234,14 @@ a {
 #header .cart-body .remove-product {
   margin-left: auto;
   cursor: pointer;
+}
+
+#header .cart-body .remove-product svg {
+  fill: #b6bcc8;
+}
+
+#header .cart-body .remove-product:hover svg {
+  fill: black;
 }
 
 #header .cart-body .checkout-btn {
