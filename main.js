@@ -55,31 +55,31 @@ thumbnailsImg.forEach((thumbnail, index) => thumbnail.addEventListener('click', 
 // lightbox section
 productImg.addEventListener('click', () => {
     lightbox.style.display = 'flex'
+})
 
-    // next slide
-    nextBtn.addEventListener('click', e => {
-        counter++
-        if (counter > product.length - 1) {
-            counter = 0
-        }
+// next slide
+nextBtn.addEventListener('click', e => {
+    counter++
+    if (counter > product.length - 1) {
+        counter = 0
+    }
 
-        lightboxThumbnailsImg.forEach(item => item.classList.remove('active'))
-        lightboxThumbnailsImg[counter].classList.add('active')
-        lightboxProductImg.src = product[counter].src
-    })
+    lightboxThumbnailsImg.forEach(item => item.classList.remove('active'))
+    lightboxThumbnailsImg[counter].classList.add('active')
+    lightboxProductImg.src = product[counter].src
+})
 
 
-    // prev slide
-    prevBtn.addEventListener('click', e => {
-        counter--
-        if (counter < 0) {
-            counter = product.length - 1
-        }
+// prev slide
+prevBtn.addEventListener('click', e => {
+    counter--
+    if (counter < 0) {
+        counter = product.length - 1
+    }
 
-        lightboxThumbnailsImg.forEach(item => item.classList.remove('active'))
-        lightboxThumbnailsImg[counter].classList.add('active')
-        lightboxProductImg.src = product[counter].src
-    })
+    lightboxThumbnailsImg.forEach(item => item.classList.remove('active'))
+    lightboxThumbnailsImg[counter].classList.add('active')
+    lightboxProductImg.src = product[counter].src
 })
 
 
